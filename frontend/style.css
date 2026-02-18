@@ -1,0 +1,615 @@
+body 
+{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background:#0b0b0b;
+    color:white;
+}
+
+/* LAYOUT */
+.layout{
+    display:flex;
+    height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:240px;
+    background:#121212;
+    padding:25px;
+    border-right:1px solid #222;
+}
+
+.sidebar h2{margin:0;}
+.tag{color:#888;font-size:13px;margin-bottom:30px;}
+
+.sidebar ul{list-style:none;padding:0;}
+.sidebar li{
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:8px;
+    cursor:pointer;
+    color:#ccc;
+}
+.sidebar li:hover{background:#1f1f1f;}
+.active{
+    background:#f1c40f;
+    color:black!important;
+    font-weight:bold;
+}
+
+/* MAIN */
+.main{
+    flex:1;
+    padding:35px;
+}
+
+.subtitle{
+    color:#8f8f8f;
+    margin-top:-10px;
+    margin-bottom:25px;
+}
+
+/* GRID */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
+
+/* CARD */
+.sensor-card{
+    background:#151515;
+    padding:22px;
+    border-radius:18px;
+    box-shadow:0 0 0 1px #2a2a2a inset;
+    transition:.3s;
+}
+
+.sensor-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.5);
+}
+
+.sensor-card h3{
+    margin:0 0 12px;
+    color:#bbb;
+    font-size:15px;
+}
+
+.value{
+    font-size:34px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.status{
+    font-size:13px;
+    color:#aaa;
+}
+
+.badge{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:12px;
+    margin-top:10px;
+}
+
+.safe{background:#173d1d;color:#5cff7c;}
+.good{color:#5cff7c;}
+
+/* COLOR BORDERS */
+.green{border:1px solid #2ecc71;}
+.blue{border:1px solid #3498db;}
+.yellow{border:1px solid #f1c40f;}
+.red{border:1px solid #e74c3c;}
+
+.chart-box{
+    background:#151515;
+    padding:24px;
+    margin-top:24px;
+    border-radius:18px;
+    box-shadow:0 0 0 1px #2a2a2a inset;
+}
+
+.chart-box h2{
+    margin-top:0;
+    color:#ccc;
+    font-size:18px;
+}
+
+.section{
+    margin-top:30px;
+    margin-bottom:12px;
+    color:#ccc;
+}
+
+/* DEVICE GRID */
+.device-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+.device-card{
+    background:#151515;
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 0 0 1px #2a2a2a inset;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.device-card.off{opacity:.6;}
+
+.status{
+    font-size:13px;
+    display:block;
+    margin-top:6px;
+}
+
+.online{color:#5cff7c;}
+.offline{color:#999;}
+
+.power{
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* RULES */
+.rule-card{
+    background:#151515;
+    padding:20px;
+    border-radius:16px;
+    margin-top:16px;
+    box-shadow:0 0 0 1px #2a2a2a inset;
+}
+
+.rule-card h3{margin-top:0;}
+.rule-card p{color:#bbb;margin:4px 0;}
+
+/* OVERRIDE */
+.override{
+    background:linear-gradient(90deg,#3a2a00,#1a1300);
+    padding:22px;
+    border-radius:16px;
+    margin-top:28px;
+    border:1px solid #6a5200;
+}
+
+/* EMERGENCY BAR */
+.emergency{
+    background:#1a0e0e;
+    border:1px solid #ff4d4d;
+    padding:18px;
+    border-radius:14px;
+    margin-bottom:22px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* ALERT CARD */
+.alert-card{
+    background:#151515;
+    padding:20px;
+    border-radius:16px;
+    margin-top:18px;
+    box-shadow:0 0 0 1px #2a2a2a inset;
+}
+
+.alert-card button{
+    margin-top:12px;
+    padding:8px 14px;
+    border:none;
+    border-radius:10px;
+    background:#25304a;
+    color:white;
+    cursor:pointer;
+}
+
+.alert-card button:hover{background:#2f3d60;}
+
+.badge{
+    font-size:11px;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-left:8px;
+}
+
+.high{border:1px solid #ff4d4d;}
+.medium{border:1px solid #f1c40f;}
+.resolved{border:1px solid #2ecc71;}
+
+.badge.high{background:#3a1010;color:#ff6b6b;}
+.badge.medium{background:#3a2f10;color:#f7d774;}
+.badge.resolved{background:#103a1a;color:#7dff9f;}
+
+/* MAP LAYOUT */
+.map-layout{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:24px;
+    margin-top:20px;
+}
+
+/* MAP CARD */
+.map-card{
+    background:#151515;
+    padding:24px;
+    border-radius:18px;
+    box-shadow:0 0 0 1px #2a2a2a inset;
+}
+
+.map-area{
+    position:relative;
+    height:380px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#1c2230,#10141b);
+}
+
+/* SENSOR NODES */
+.node{
+    position:absolute;
+    transform:translate(-50%,-50%);
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    color:white;
+    background:#333;
+}
+
+.node.green{background:#2ecc71;}
+.node.yellow{background:#f1c40f;color:black;}
+.node.red{background:#e74c3c;}
+
+.map-footer{
+    color:#aaa;
+    margin-top:12px;
+}
+
+/* SIDE PANEL */
+.map-side{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.side-card{
+    background:#151515;
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 0 0 1px #2a2a2a inset;
+}
+
+.panel{
+    padding:22px;
+    border-radius:16px;
+    margin-top:22px;
+    background:#151515;
+    box-shadow:0 0 0 1px #2a2a2a inset;
+}
+
+.panel.green{border:1px solid #2ecc71;}
+.panel.yellow{border:1px solid #f1c40f;}
+.panel.purple{border:1px solid #9b59b6;}
+.panel.danger{border:1px solid #e74c3c;}
+
+.toggle{
+    display:flex;
+    justify-content:space-between;
+    margin-top:14px;
+    color:#bbb;
+}
+
+.input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border-radius:10px;
+    border:none;
+    background:#202020;
+    color:white;
+}
+
+.btn{
+    margin-top:14px;
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:#ff8c1a;
+    color:white;
+    cursor:pointer;
+}
+
+.danger-btn{
+    margin-top:10px;
+    padding:12px;
+    width:100%;
+    border:none;
+    border-radius:10px;
+    background:#2a2a2a;
+    color:white;
+    cursor:pointer;
+}
+
+.danger-btn.red{background:#4d1010;}
+.small{color:#888;margin-top:12px;font-size:13px;}
+
+
+/* remove purple link color */
+.sidebar a{
+    color:#cfcfcf;        /* light gray text */
+    text-decoration:none; /* remove underline */
+    display:block;
+    padding:10px 14px;
+    border-radius:10px;
+}
+
+/* hover effect */
+.sidebar a:hover{
+    background:#1a1a1a;
+    color:white;
+}
+/* ===================================================
+   CONTROL SECTION
+=================================================== */
+
+.control-section {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Control Card */
+.control-card {
+    background: #121212;
+    border-radius: 16px;
+    padding: 25px;
+    width: 260px;
+    transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.control-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Glow Border - Fan */
+.fan-card {
+    border: 2px solid #00ff99;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.7);
+}
+
+/* Glow Border - Buzzer */
+.buzzer-card {
+    border: 2px solid #ffcc00;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+}
+
+/* Text */
+.control-card h3 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.control-card p {
+    color: #bbb;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Icon */
+.icon {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+/* ===================================================
+   TOGGLE SWITCH
+=================================================== */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #555;
+    border-radius: 34px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transitio
+}
+/* ===== BODY ===== */
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background-color: #0f172a;  /* Dark clean background */
+    color: white;
+}
+
+/* ===== LAYOUT ===== */
+.layout {
+    display: flex;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 250px;
+    background-color: #111827;
+    padding: 20px;
+    min-height: 100vh;
+    border-right: 2px solid #1e293b;
+}
+
+.sidebar h2 {
+    color: #22d3ee; /* Blue */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar li:hover {
+    background-color: #1e40af;
+}
+
+.sidebar .active {
+    background-color: #2563eb;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ===== MAIN ===== */
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #22d3ee; /* Blue */
+}
+
+.subtitle {
+    color: #94a3b8;
+}
+
+.section {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #facc15; /* Yellow */
+}
+
+/* ===== DEVICE & RULE CARDS ===== */
+.device-card,
+.rule-card {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.device-card:hover,
+.rule-card:hover {
+    background-color: #334155;
+}
+
+.device-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ===== STATUS TEXT ===== */
+
+/* OFFLINE → Yellow */
+.status-text {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #facc15;
+    color: black;
+}
+
+/* ACTIVE → Blue */
+.status-text.active {
+    background-color: #22d3ee;
+    color: black;
+}
+
+/* ===== CONDITION ANSWER RED ===== */
+.rule-card p {
+    margin: 3px 0;
+}
+
+.rule-card p span {
+    color: red;
+    font-weight: bold;
+}
+
+/* ===== SWITCH ===== */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    background-color: #475569;
+    border-radius: 25px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .3s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2.5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+input:checked + .slider {
+    background-color: #22d3ee; /* Blue when active */
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}

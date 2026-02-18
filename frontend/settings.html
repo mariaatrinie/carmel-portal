@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Carmel Smart-Sense</h2>
+    <p class="tag">Sense • Predict • Protect</p>
+
+    <ul>
+        <li onclick="go('dashboard.html')">Dashboard</li>
+        <li onclick="go('analytics.html')">Analytics</li>
+        <li onclick="go('automation.html')">Automation</li>
+        <li onclick="go('alerts.html')">Alerts</li>
+        <li onclick="go('mapview.html')">Map View</li>
+        <li class="active">Settings</li>
+        <li onclick="logout()">Logout</li>
+    </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <h1>Settings</h1>
+    <p class="subtitle">Manage your account and system preferences</p>
+
+    <!-- ESP32 PANEL -->
+    <div class="panel green">
+        <h2>ESP32 & IoT Configuration</h2>
+        <p>ESP32 Status: <b style="color:#5cff7c">Connected</b></p>
+        <p>Cloud Sync: <b>Active</b></p>
+
+        <div class="toggle">
+            <span>Wi-Fi Auto Reconnect</span>
+            <input type="checkbox" checked>
+        </div>
+
+        <div class="toggle">
+            <span>Real-time Data Streaming</span>
+            <input type="checkbox" checked>
+        </div>
+
+        <div class="toggle">
+            <span>Local Data Backup</span>
+            <input type="checkbox">
+        </div>
+
+        <p class="small">Active Sensors: DHT22, MQ-5, MQ-7, MQ-3, Rain, MQ-135, Sound</p>
+    </div>
+
+
+    <!-- ACCOUNT PANEL -->
+    <div class="panel yellow">
+        <h2>Account Information</h2>
+
+        <input class="input" value="John">
+        <input class="input" value="Doe">
+        <input class="input" value="john.doe@smartsense.io">
+        <input class="input" value="SmartSense Corp">
+
+        <button class="btn">Save Changes</button>
+    </div>
+
+
+    <!-- NOTIFICATIONS -->
+    <div class="panel purple">
+        <h2>Notification Preferences</h2>
+
+        <div class="toggle">
+            <span>Email Notifications</span>
+            <input type="checkbox" checked>
+        </div>
+
+        <div class="toggle">
+            <span>Push Notifications</span>
+            <input type="checkbox" checked>
+        </div>
+
+        <div class="toggle">
+            <span>Critical Alerts Only</span>
+            <input type="checkbox">
+        </div>
+
+        <div class="toggle">
+            <span>Daily Summary</span>
+            <input type="checkbox" checked>
+        </div>
+    </div>
+
+
+    <!-- DANGER ZONE -->
+    <div class="panel danger">
+        <h2>Danger Zone</h2>
+        <button class="danger-btn">Reset All Settings</button>
+        <button class="danger-btn red">Delete Account</button>
+    </div>
+
+</div>
+</div>
+
+<script>
+function logout(){
+    localStorage.removeItem("isLoggedIn");
+    window.location.href="login.html";
+}
+function go(p){window.location=p;}
+</script>
+
+</body>
+</html>

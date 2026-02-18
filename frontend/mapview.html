@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map View</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Carmel Smart-Sense</h2>
+    <p class="tag">Sense • Predict • Protect</p>
+
+    <ul>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="analytics.html">Analytics</a></li>
+    <li><a href="automation.html">Automation</a></li>
+    <li><a href="alerts.html">Alerts</a></li>
+    <li><a href="mapview.html">Map View</a></li>
+    <li><a href="settings.html">Settings</a></li>
+    <li class="active"><a href="mapview.html">Mapview</a></li>
+    <li onclick="logout()">Logout</li>
+</ul>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <h1>Sensor Map View</h1>
+    <p class="subtitle">Real-time sensor locations and status</p>
+
+    <div class="map-layout">
+
+        <!-- MAP PANEL -->
+        <div class="map-card">
+
+            <div class="map-area">
+
+                <!-- SENSOR NODES -->
+                <div class="node green" style="top:35%;left:25%;">Main Hall</div>
+                <div class="node yellow" style="top:25%;left:55%;">Office</div>
+                <div class="node green" style="top:60%;left:20%;">Lobby</div>
+                <div class="node red" style="top:55%;left:45%;">Server</div>
+                <div class="node green" style="top:65%;left:70%;">Conference</div>
+                <div class="node green" style="top:40%;left:75%;">Storage</div>
+
+            </div>
+
+            <p class="map-footer">6 sensors active • Updated 30s ago</p>
+
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="map-side">
+
+            <div class="side-card">
+                <h3>Node Details</h3>
+                <p>Select a sensor node on the map</p>
+            </div>
+
+            <div class="side-card">
+                <h3>Quick Stats</h3>
+                <p>Total Nodes: 6</p>
+                <p>Online: 6</p>
+                <p>Warnings: 1</p>
+                <p>Critical: 1</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<script>
+function logout(){
+    localStorage.removeItem("isLoggedIn");
+    window.location.href="login.html";
+}
+function go(p){window.location=p;}
+</script>
+
+</body>
+</html>

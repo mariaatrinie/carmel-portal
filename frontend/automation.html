@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>Carmel Smart-Sense</h2>
+        <p class="tag">Sense • Predict • Protect</p>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+            <li class="active"><a href="automation.html">Automation</a></li>
+            <li><a href="alerts.html">Alerts</a></li>
+            <li><a href="mapview.html">Map View</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <h1>Automation & Control</h1>
+        <p class="subtitle">Manage devices and automation rules</p>
+
+        <!-- CONNECTED DEVICES -->
+        <h2 class="section">Connected Devices</h2>
+
+        <div class="device-card">
+            <h3>Exhaust Fan</h3>
+            <div class="device-right">
+                <span class="status-text active" id="fan-status">ACTIVE</span>
+                <label class="switch">
+                    <input type="checkbox" checked onchange="toggleStatus(this,'fan-status')">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="device-card">
+            <h3>Room Light</h3>
+            <div class="device-right">
+                <span class="status-text active" id="light-status">ACTIVE</span>
+                <label class="switch">
+                    <input type="checkbox" checked onchange="toggleStatus(this,'light-status')">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="device-card">
+            <h3>AC Unit</h3>
+            <div class="device-right">
+                <span class="status-text active" id="ac-status">ACTIVE</span>
+                <label class="switch">
+                    <input type="checkbox" checked onchange="toggleStatus(this,'ac-status')">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="device-card">
+            <h3>Air Purifier</h3>
+            <div class="device-right">
+                <span class="status-text active" id="purifier-status">ACTIVE</span>
+                <label class="switch">
+                    <input type="checkbox" checked onchange="toggleStatus(this,'purifier-status')">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- AUTOMATION RULES -->
+        <h2 class="section">Automation Rules</h2>
+
+        <div class="rule-card">
+            <div>
+                <h3>High AQI Alert</h3>
+                <p>Condition: AQI <span>> 100</span></p>
+                <p>Action: Turn ON Air Purifier</p>
+            </div>
+        </div>
+
+        <div class="rule-card">
+            <div>
+                <h3>Temperature Control</h3>
+                <p>Condition: Temp <span>> 28°C</span></p>
+                <p>Action: Turn ON AC Unit</p>
+            </div>
+        </div>
+
+        <div class="rule-card">
+            <div>
+                <h3>Gas Leakage Emergency</h3>
+                <p>Condition: Gas <span>> 50 ppm</span></p>
+                <p>Action: Turn OFF All Devices + Alert</p>
+            </div>
+        </div>
+
+        <div class="rule-card">
+            <div>
+                <h3>CO Detection</h3>
+                <p>Condition: CO <span>> 35 ppm</span></p>
+                <p>Action: Turn ON Ventilation + Alert</p>
+            </div>
+        </div>
+
+        <div class="rule-card">
+            <div>
+                <h3>Rain Detection</h3>
+                <p>Condition: Rain <span>= YES</span></p>
+                <p>Action: Close Windows + Send Alert</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function toggleStatus(element,id){
+    const status = document.getElementById(id);
+    if(element.checked){
+        status.textContent = "ACTIVE";
+        status.classList.add("active");
+    } else {
+        status.textContent = "OFFLINE";
+        status.classList.remove("active");
+    }
+}
+</script>
+
+</body>
+</html>

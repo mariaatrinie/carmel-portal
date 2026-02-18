@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alerts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Carmel Smart-Sense</h2>
+    <p class="tag">Sense • Predict • Protect</p>
+
+    <ul>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="analytics.html">Analytics</a></li>
+    <li><a href="automation.html">Automation</a></li>
+    <li><a href="alerts.html">Alerts</a></li>
+    <li><a href="mapview.html">Map View</a></li>
+    <li><a href="settings.html">Settings</a></li>
+    <li class="active"><a href="alerts.html">Alerts</a></li>
+    <li onclick="logout()">Logout</li>
+</ul>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <h1>Alerts & Notifications</h1>
+    <p class="subtitle">Monitor system alerts and emergency status</p>
+
+    <!-- EMERGENCY BAR -->
+    <div class="emergency">
+        ⚠ Activate Emergency Mode
+    </div>
+
+    <!-- PRIORITY CARDS -->
+    <div class="cards">
+
+        <div class="sensor-card red">
+            <h3>High Priority</h3>
+            <div class="value">2</div>
+            <span class="status">Active alerts</span>
+        </div>
+
+        <div class="sensor-card yellow">
+            <h3>Medium Priority</h3>
+            <div class="value">3</div>
+            <span class="status">Active alerts</span>
+        </div>
+
+        <div class="sensor-card green">
+            <h3>Resolved Today</h3>
+            <div class="value">12</div>
+            <span class="status">Total resolved</span>
+        </div>
+
+    </div>
+
+
+    <!-- ALERT TIMELINE -->
+    <h2 class="section">Alert Timeline</h2>
+
+    <div class="alert-card high">
+        <h3>Gas Leakage Detected <span class="badge high">HIGH</span></h3>
+        <p>MQ-5 detected 65 ppm gas. Emergency shutdown activated.</p>
+        <button>Mark Resolved</button>
+    </div>
+
+    <div class="alert-card high">
+        <h3>Carbon Monoxide Warning <span class="badge high">HIGH</span></h3>
+        <p>CO level at 28 ppm. Ventilation auto-enabled.</p>
+        <button>Mark Resolved</button>
+    </div>
+
+    <div class="alert-card medium">
+        <h3>High Temperature Alert <span class="badge medium">MEDIUM</span></h3>
+        <p>Temperature exceeded 32°C in Zone A.</p>
+        <button>Mark Resolved</button>
+    </div>
+
+    <div class="alert-card medium">
+        <h3>Air Quality Warning <span class="badge medium">MEDIUM</span></h3>
+        <p>PM2.5 level at 85. Ventilation recommended.</p>
+        <button>Mark Resolved</button>
+    </div>
+
+    <div class="alert-card resolved">
+        <h3>System Normal <span class="badge resolved">Resolved</span></h3>
+        <p>All sensors returned to optimal levels.</p>
+    </div>
+
+</div>
+</div>
+
+<script>
+function logout(){
+    localStorage.removeItem("isLoggedIn");
+    window.location.href="login.html";
+}
+function go(p){window.location=p;}
+</script>
+
+</body>
+</html>

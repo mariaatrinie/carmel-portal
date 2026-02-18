@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SmartSense Register</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#141e30,#243b55);
+  color:white;
+}
+
+/* glass card */
+.card{
+  width:380px;
+  padding:40px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  box-shadow:0 0 40px rgba(0,0,0,0.5);
+  text-align:center;
+}
+
+/* title */
+.title{
+  font-size:26px;
+  font-weight:600;
+  margin-bottom:5px;
+}
+
+.subtitle{
+  font-size:14px;
+  color:#ccc;
+  margin-bottom:25px;
+}
+
+/* inputs */
+input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:10px;
+  background:rgba(255,255,255,0.15);
+  color:white;
+  outline:none;
+}
+
+input::placeholder{
+  color:#ddd;
+}
+
+/* button */
+button{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border:none;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  background:linear-gradient(90deg,#ff7a18,#ff3c3c);
+  color:white;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(255,60,60,0.4);
+}
+
+/* footer link */
+.footer{
+  margin-top:20px;
+  font-size:14px;
+}
+
+.footer a{
+  color:#00c6ff;
+  text-decoration:none;
+}
+
+.footer a:hover{
+  text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="title">Create Account</div>
+  <div class="subtitle">Join Carmel Smart-Sense Monitoring System</div>
+
+  <input id="username" placeholder="Choose Username">
+  <input id="password" type="password" placeholder="Choose Password">
+
+  <button onclick="register()">Create Account</button>
+
+  <div class="footer">
+    Already have an account?
+    <a href="login.html">Login</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
